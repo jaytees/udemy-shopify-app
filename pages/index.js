@@ -1,7 +1,7 @@
 const Index = () => {
   return (
     <div>
-      <p>Sample app using React</p>
+      <p>Sample app using React and Next</p>
     </div>
   );
 };
