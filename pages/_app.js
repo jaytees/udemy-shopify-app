@@ -12,7 +12,6 @@ import Cookies from 'js-cookies';
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
-    console.log(Cookies);
     const config = { apiKey: API_KEY, shopOrigin: Cookies.getItem('shopOrigin'), forceRedirect: true };
     return (
       <React.Fragment>
