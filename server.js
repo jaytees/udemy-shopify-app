@@ -32,12 +32,15 @@ app.prepare().then(() => {
       secret: SHOPIFY_API_SECRET,
       //   scopes is something you need to modify
       scopes: ['read_products', 'write_products', 'read_script_tags', 'write_script_tags'],
+      accessMode: 'offline',
       afterAuth(ctx) {
         const { shop, accessToken } = ctx.session;
         // set our cookies
         ctx.cookies.set('shopOrigin', shop, {
           httpOnly: false,
           secure: true,
+          signed: true,
+          overwrite: true,
           sameSite: 'none'
         });
         ctx.redirect('/');
