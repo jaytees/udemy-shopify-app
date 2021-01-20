@@ -1,9 +1,9 @@
-const Index = () => {
+function Index() {
   return (
     <div>
-      <p>Sample app using React and Next</p>
+      <p>Hello Shopify World</p>
     </div>
   );
-};
+}
 
 export default Index;
