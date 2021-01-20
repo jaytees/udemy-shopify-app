@@ -34,7 +34,12 @@ app.prepare().then(() => {
       scopes: ['read_products', 'write_products', 'read_script_tags', 'write_script_tags'],
       afterAuth(ctx) {
         const { shop, accessToken } = ctx.session;
-
+        // set our cookies
+        ctx.cookies.set('shopOrigin', shop, {
+          httpOnly: false,
+          secure: true,
+          sameSite: 'none'
+        });
         ctx.redirect('/');
       }
     })
