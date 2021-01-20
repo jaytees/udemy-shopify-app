@@ -40,7 +40,6 @@ app.prepare().then(() => {
           httpOnly: false,
           secure: true,
           signed: true,
-          overwrite: true,
           sameSite: 'none'
         });
         ctx.redirect('/');

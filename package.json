@@ -19,7 +19,7 @@
     "@shopify/polaris": "^5.13.1",
     "dotenv": "^8.2.0",
     "isomorphic-fetch": "^3.0.0",
-    "js-cookies": "^1.0.4",
+    "js-cookie": "^2.2.1",
     "koa": "^2.13.1",
     "koa-session": "^6.1.0",
     "next": "^10.0.5",

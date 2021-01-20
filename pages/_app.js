@@ -7,12 +7,12 @@ import '@shopify/polaris/dist/styles.css';
 // manadatory to use translations
 import translations from '@shopify/polaris/locales/en.json';
 import { Provider } from '@shopify/app-bridge-react';
-import Cookies from 'js-cookies';
+import Cookies from 'js-cookie';
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
-    const config = { apiKey: API_KEY, shopOrigin: Cookies.getItem('shopOrigin'), forceRedirect: true };
+    const config = { apiKey: API_KEY, shopOrigin: Cookies.get('shopOrigin'), forceRedirect: true };
     return (
       <React.Fragment>
         <Head>
