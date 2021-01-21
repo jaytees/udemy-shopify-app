@@ -14,6 +14,7 @@ function Index() {
     const idsFromResources = resources.selection.map((product) => product.id);
     setModal({ open: false });
     store.set('ids', idsFromResources);
+    console.log(store.get('ids'));
   };
 
   return (
