@@ -8,6 +8,9 @@ const { verifyRequest } = require('@shopify/koa-shopify-auth');
 const session = require('koa-session');
 
 dotenv.config();
+// import the Shopify API GraphQlProxy
+const { default: graphQLProxy } = require('@shopify/koa-shopify-graphql-proxy');
+const { ApiVersion } = require('@shopify/koa-shopify-graphql-proxy');
 
 // create port variable
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -47,6 +50,7 @@ app.prepare().then(() => {
     })
   );
 
+  server.use(graphQLProxy({ version: ApiVersion.October19 }));
   server.use(verifyRequest());
   server.use(async (ctx) => {
     await handle(ctx.req, ctx.res);
